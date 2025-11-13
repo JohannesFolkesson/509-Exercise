@@ -2,6 +2,7 @@ import { fakeStoreApi } from './apiService.js';
 
 
 export async function loadProducts() {
+
     const products = await fakeStoreApi();
 
     const allProducts = [];
@@ -21,7 +22,7 @@ export async function loadProducts() {
         pTagDesc.textContent = product.description;
         pTagCategory.textContent = product.category;
 
-        
+
         wrapper.append(h3, img, pTagPrice, pTagDesc, pTagCategory);
         allProducts.push(wrapper);
 
