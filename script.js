@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoader', () => {
     });
 });
 
-const btn = document.getElementById("button")
+const btn = document.getElementById("btn")
 
 btn.addEventListener('click', () => {
     console.log("THE BUTTON WAS PUSHED")
