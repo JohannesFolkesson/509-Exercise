@@ -1,6 +1,6 @@
 import { loadProducts } from "./js/uiComponent.js";
 import { createButton } from "./js/buttons.js";
-import { saveFilter } from "./js/filter.js";
+// import { saveFilter } from "./js/filter.js";
 
 async function products() {
   const cont = document.getElementById("productList");
@@ -20,33 +20,33 @@ document.addEventListener("DOMContentLoaded", () => {
     products();
   });
 
-    productsBtn.addEventListener("click", () => {
-      saveFilter.saveLastFilter("all");
-    });
+  // productsBtn.addEventListener("click", () => {
+  //   saveFilter.saveLastFilter("all");
+  // });
 
-    menBtn.addEventListener("click", () => {
-      saveFilter.saveLastFilter("men");
-      products();
-    });
+  // menBtn.addEventListener("click", () => {
+  //   saveFilter.saveLastFilter("men");
+  //   products();
+  // });
 
-    womenBtn.addEventListener("click", () => {
-      saveFilter.saveLastFilter("women");
-      products();
-    });
+  // womenBtn.addEventListener("click", () => {
+  //   saveFilter.saveLastFilter("women");
+  //   products();
+  // });
 
-    const savedFilter = saveFilter.loadLastFilter(); // Load last saved filter
-    if (savedFilter && savedFilter.type) {
-      console.log("Hittade sparat filter:", savedFilter.type); // Log the found filter type
-      if (savedFilter.type === "all") {
-        productsBtn.click();
-      } else if (savedFilter.type === "men") { // Corrected condition
-        menBtn.click();
-      } else if (savedFilter.type === "women") { 
-        womenBtn.click();
-      }
-    } else {
-      products();
-    }
+  // const savedFilter = saveFilter.loadLastFilter(); // Load last saved filter
+  // if (savedFilter && savedFilter.type) {
+  //   console.log("Hittade sparat filter:", savedFilter.type); // Log the found filter type
+  //   if (savedFilter.type === "all") {
+  //     productsBtn.click();
+  //   } else if (savedFilter.type === "men") { // Corrected condition
+  //     menBtn.click();
+  //   } else if (savedFilter.type === "women") {
+  //     womenBtn.click();
+  //   }
+  // } else {
+  //   products();
+  // }
 });
 
 const btn = document.getElementById("btn");
