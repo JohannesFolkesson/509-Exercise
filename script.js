@@ -15,76 +15,49 @@ async function products() {
 }
 
 //document.addEventListener("DOMContentLoaded", () => {
- // const { productsBtn, menBtn, womenBtn } = createButton();
+// const { productsBtn, menBtn, womenBtn } = createButton();
 
-  ////////// });
-
-  // productsBtn.addEventListener("click", () => {
-  //   saveFilter.saveLastFilter("all");
-  // });
-
-  // menBtn.addEventListener("click", () => {
-  //   saveFilter.saveLastFilter("men");
-  //   products();
-  // });
-
-  // womenBtn.addEventListener("click", () => {
-  //   saveFilter.saveLastFilter("women");
-  //   products();
-  // });
-
-  // const savedFilter = saveFilter.loadLastFilter(); // Load last saved filter
-  // if (savedFilter && savedFilter.type) {
-  //   console.log("Hittade sparat filter:", savedFilter.type); // Log the found filter type
-  //   if (savedFilter.type === "all") {
-  //     productsBtn.click();
-  //   } else if (savedFilter.type === "men") { // Corrected condition
-  //     menBtn.click();
-  //   } else if (savedFilter.type === "women") {
-  //     womenBtn.click();
-  //   }
-  // } else {
-  //   products();
-  // }
-//});
+////////// });
 
 
-function filterProducts(text) {
-    const cont = document.getElementById('productList');
-    cont.innerHTML = "";
-
-    const query = text.toLowerCase();
-
-    const filtered = savedProducts.filter(item => {
-        const title = item.querySelector('h3').textContent.toLowerCase();
-        return title.includes(query);
-    });
-
-    filtered.forEach(item => cont.appendChild(item));
-}
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const { productsBtn, menBtn, womenBtn } = createButton();
+// function filterProducts(text) {
+//     const cont = document.getElementById('productList');
+//     cont.innerHTML = "";
 
-    const input = document.getElementById('searchInput');
+//     const query = text.toLowerCase();
+
+//     const filtered = savedProducts.filter(item => {
+//         const title = item.querySelector('h3').textContent.toLowerCase();
+//         return title.includes(query);
+//     });
+
+//     filtered.forEach(item => cont.appendChild(item));
+// }
 
 
-    const btnContainer = document.getElementById('button-container');
-    btnContainer.append(productsBtn, menBtn, womenBtn);
-    productsBtn.addEventListener('click', () => {
-        const value = input.value.trim();
+// document.addEventListener('DOMContentLoaded', () => {
+//   const { productsBtn, menBtn, womenBtn } = createButton();
 
-        if (value === "") {
-            products();
-        } else {
-            filterProducts(value);
-        }
-    });
-    products();
-});
+//   const input = document.getElementById('searchInput');
 
-  async function searchProducts () {
+
+//   const btnContainer = document.getElementById('button-container');
+//   btnContainer.append(productsBtn, menBtn, womenBtn);
+//   productsBtn.addEventListener('click', () => {
+//     const value = input.value.trim();
+
+//     if (value === "") {
+//       products();
+//     } else {
+//       filterProducts(value);
+//     }
+//   });
+//   products();
+// });
+
+async function searchProducts() {
 
   const q = document.getElementById("searchInput").value.toLowerCase();
   const res = await fetch("https://fakestoreapi.com/products");
@@ -100,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         $${p.price}
       </div>me
     `
-    
+
       )
       .join("") || "Inga produkter hittades.";
 
