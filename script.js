@@ -14,14 +14,10 @@ async function products() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const { productsBtn, menBtn, womenBtn } = createButton();
+//document.addEventListener("DOMContentLoaded", () => {
+ // const { productsBtn, menBtn, womenBtn } = createButton();
 
-  const btnContainer = document.getElementById("button-container");
-  btnContainer.append(productsBtn, menBtn, womenBtn);
-  productsBtn.addEventListener("click", () => {
-    products();
-  });
+  ////////// });
 
   // productsBtn.addEventListener("click", () => {
   //   saveFilter.saveLastFilter("all");
@@ -50,24 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // } else {
   //   products();
   // }
-});
-
-const btn = document.getElementById("btn");
-
-btn.addEventListener("click", async () => {
-  console.log("THE BUTTON WAS PUSHED");
-
-
-    const cont = document.getElementById('productList');
-
-    const allProducts = await loadProducts();
-
-    savedProducts = allProducts;
-
-    allProducts.forEach(item => {
-        cont.appendChild(item);
-    })
-}
+//});
 
 
 function filterProducts(text) {
@@ -124,9 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
       )
       .join("") || "Inga produkter hittades.";
-
-  )
-  .join("") || "Inga produkter hittades.";
 
 };
 
