@@ -20,11 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-const btn = document.getElementById("btn")
 
-btn.addEventListener('click', async () => {
-    console.log("THE BUTTON WAS PUSHED")
-
+  async function searchProducts () {
   const q = document.getElementById("searchInput").value.toLowerCase();
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
@@ -41,5 +38,14 @@ btn.addEventListener('click', async () => {
   )
   .join("") || "Inga produkter hittades.";
 
+};
+
+const btn = document.getElementById("btn");
+btn.addEventListener('click', searchProducts);
+
+const input = document.getElementById("searchInput");
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") searchProducts();
 });
+
 
